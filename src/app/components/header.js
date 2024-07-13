@@ -2,29 +2,21 @@ import Spline from "@splinetool/react-spline";
 
 const Header = () => {
   return (
-    // <!-- component -->
-    <nav class="bg-main shadow shadow-gray-300 w-100 px-8 md:px-auto">
-      <div class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
-        {/* <!-- Logo --> */}
-        <div class="text-text-hover md:order-1">
-          {/* <!-- Heroicon - Chip Outline --> */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="square"
-              stroke-linejoin="miter"
-              stroke-width="3"
-              d="M5 19V5l7 14V5"
-            />
-          </svg>
+    <div className="flex justify-around header-nav">
+      <div className="header font-bold text-3xl flex justify-center items-center text-slate-100">
+        <a href="/">
+          <h1>Nour Elden</h1>
+        </a>
+      </div>
+      <div className=" flex text-header-nav text-white">
+        <div className=" flex justify-center items-center">
+          <a href="/work">Work</a>
         </div>
+        <div className="text-white flex justify-center items-center contact-nav">
+          <a href="/Contact">Contact ME</a>
         </div>
       </div>
+    </div>
   );
 };
 
