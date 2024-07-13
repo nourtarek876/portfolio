@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Spline from "@splinetool/react-spline";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

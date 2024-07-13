@@ -23,26 +23,8 @@ const Header = () => {
             />
           </svg>
         </div>
-        <div class="text-text-color order-3 w-full md:w-auto md:order-2">
-          <ul class="flex font-semibold justify-between">
-            {/* <!-- Active Link = text-indigo-500
-                    Inactive Link = hover:text-indigo-500 --> */}
-            <li class="md:px-4 md:py-2 hover:text-text-hover">
-              <a href="/">Home</a>
-            </li>
-            <li class="md:px-4 md:py-2 hover:text-text-hover">
-              <a href="/work">Work</a>
-            </li>
-            <li class="md:px-4 md:py-2 hover:text-text-hover">
-              <a href="/cv">CV</a>
-            </li>
-            <li class="md:px-4 md:py-2 hover:text-text-hover">
-              <a href="/cotact">Contact</a>
-            </li>
-          </ul>
         </div>
       </div>
-    </nav>
   );
 };
 
