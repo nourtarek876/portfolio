@@ -146,14 +146,31 @@ html{
   height: 90vh;
   color: #ffffff;
   /* img size is 50x50 */
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  background: rgba(18, 18, 18, 1);
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
+  -webkit-animation: bg-scrolling-reverse 7s infinite;
   /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  -moz-animation: bg-scrolling-reverse 7s infinite;
   /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  -o-animation: bg-scrolling-reverse 7s infinite;
   /* Opera 12+ */
-  animation: bg-scrolling-reverse 0.92s infinite;
+  animation: bg-scrolling-reverse 7s infinite;
   /* IE 10+ */
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
@@ -164,27 +181,27 @@ html{
 /* Animations */
 @-webkit-keyframes bg-scrolling-reverse {
   100% {
-    background-position: 50px 50px;
+    background-position: 100px 100px;
   }
 }
 @-moz-keyframes bg-scrolling-reverse {
   100% {
-    background-position: 50px 50px;
+    background-position: 100px 100px;
   }
 }
 @-o-keyframes bg-scrolling-reverse {
   100% {
-    background-position: 50px 50px;
+    background-position: 100px 100px;
   }
 }
 @keyframes bg-scrolling-reverse {
   100% {
-    background-position: 50px 50px;
+    background-position: 100px 100px;
   }
 }
 @-webkit-keyframes bg-scrolling {
   0% {
-    background-position: 50px 50px;
+    background-position: 100px 100px;
   }
 }
 @-moz-keyframes bg-scrolling {
@@ -203,52 +220,70 @@ html{
   }
 }
 
-.land-count{
+
+
+.land-holder{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90vh;
 }
 
-
-.land-text h1{
-  font-size: 4rem;
-  color: #2f2f2f;
+.land-holder h1{
+  font-size: 4.5rem;
+  color: #ffffff;
   font-family: "Libre Baskerville", serif;
   margin: 0;
+  animation: glow 3s infinite alternate;
 }
 
-/* @media (max-width:800px) {
-  .land-cont{
-    left: 0;
-    top: 0;
+@keyframes glow {
+  0% {
+      text-shadow: 
+          0 0 5px #00f, 
+          0 0 10px #00f, 
+          0 0 20px #00f, 
+          0 0 40px #00f, 
+          0 0 80px #00f, 
+          0 0 90px #00f, 
+          0 0 100px #00f, 
+          0 0 150px #00f;
   }
-  .land-holder{
-    left: 0;
+  50% {
+      text-shadow: 
+          0 0 5px #0ff, 
+          0 0 10px #0ff, 
+          0 0 20px #0ff, 
+          0 0 40px #0ff, 
+          0 0 80px #0ff, 
+          0 0 90px #0ff, 
+          0 0 100px #0ff, 
+          0 0 150px #0ff;
   }
-  .land-text{
-    top: 150px;
-    left: 0;
+  100% {
+      text-shadow: 
+          0 0 5px #00f, 
+          0 0 10px #00f, 
+          0 0 20px #00f, 
+          0 0 40px #00f, 
+          0 0 80px #00f, 
+          0 0 90px #00f, 
+          0 0 100px #00f, 
+          0 0 150px #00f;
   }
-} */
+}
 
-/* @media (min-width:1000px) {
-  .land-text{
-    left: 200px;
+@media (max-width:800px) {
+  .land-holder h1{
+    font-size: 2.5rem;
   }
-} */
+}
 
 body {
   background: rgb(18, 18, 18);
 }
-
-/* @media (max-width:800px) {
-  .land-holder{
-    padding: 0 0 100px 0;
-    display:flex;
-    justify-content: center;
-    align-items: end;
-  }
-} */
 
 .text-header-nav {
   border-radius: 10px;
@@ -337,10 +372,10 @@ body {
 }
 
 .land-about p {
-  width: 60%;
+  width: 50%;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
-  padding: 40px 0;
+  padding: 40px 40px;
   color: #fff;
   text-shadow: 3px 3px 5px rgba(0, 162, 255, 0.837);
 }
@@ -351,6 +386,7 @@ body {
   .land-about p {
     width: 100%;
     letter-spacing: 0;
+    padding: 40px 20px;
     text-align: center;
   }
   .about-content {
@@ -994,3 +1030,32 @@ body {
 }
 
 /* end social */
+
+/* start footer */
+.footer {
+  background: linear-gradient(to top, #c5c5c5 0%, #000d70 1%, #121212 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer .copy-write {
+  color: #bbb9b9;
+  font-size: 18px;
+}
+.footer .developer {
+  color: #292929;
+  font-size: 12px;
+  display: flex;
+  text-align: end;
+  justify-content: flex;
+  position: relative;
+  left: 300px;
+}
+@media (max-width: 1080px) {
+  .footer .developer {
+    left: 0;
+  }
+}
+
+/* end footer */
