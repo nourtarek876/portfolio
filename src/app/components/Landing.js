@@ -118,6 +118,9 @@ const Landing = () => {
             </div>
           </div>
         </div>
+        {/* start skills */}
+        <div className="my-skills"></div>
+        {/* end skills */}
         {/* start about */}
         <div className="land-about">
           <h1>About Me</h1>
