@@ -48,7 +48,7 @@ export default function Work() {
                 <div class="circle"></div>
                 <div class="circle"></div>
                 <div class="card-inner inner-4">
-                  <a href="https://nourtarek876.github.io/sunnaliva/">
+                  <a href="https://corsi.vercel.app/">
                     <button>Preview</button>
                   </a>
                 </div>
